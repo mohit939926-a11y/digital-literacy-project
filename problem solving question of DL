@@ -1,0 +1,37 @@
+# Problem:
+# In digital literacy, it is important to create strong passwords.
+# Write a Python program that checks whether a password is strong or not.
+#
+# A password is considered strong if:
+# 1. It has at least 8 characters
+# 2. It contains at least one uppercase letter
+# 3. It contains at least one lowercase letter
+# 4. It contains at least one digit
+#
+# Example:
+# Input: Mohit@123
+# Output: Strong Password
+
+# Solution:
+
+# Step 1: Take password input
+password = input("Enter your password: ")
+
+# Step 2: Check conditions
+has_upper = False
+has_lower = False
+has_digit = False
+
+for char in password:
+    if char.isupper():
+        has_upper = True
+    elif char.islower():
+        has_lower = True
+    elif char.isdigit():
+        has_digit = True
+
+# Step 3: Check length
+if len(password) >= 8 and has_upper and has_lower and has_digit:
+    print("Strong Password")
+else:
+    print("Weak Password")
